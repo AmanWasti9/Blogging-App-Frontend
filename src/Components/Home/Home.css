@@ -1,0 +1,10 @@
+.stroke-text {
+    font-size: 14vmin; 
+    color: transparent; 
+    -webkit-text-stroke: 2px white; 
+}
+.para {
+    font-size: 4vmin; 
+    font-weight: 600;
+}
+

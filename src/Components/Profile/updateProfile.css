@@ -1,0 +1,32 @@
+.profile-preview{
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 100vh;
+    width:100%;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.profile-preview .preview{
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    margin: 2rem;
+    width: 30rem;
+    border-radius: 12px;
+}
+
+.backclose-btn{
+    display: flex;
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+}
+.update-profile-textfield{
+    padding: 2rem;
+}

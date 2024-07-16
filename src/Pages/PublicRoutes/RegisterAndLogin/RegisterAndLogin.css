@@ -1,0 +1,37 @@
+.main-div{
+    /* background: #f6f5f7; */
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    margin: -20px 0;
+    margin-top: 50px;
+}
+
+.login-form{
+    display: none;
+}
+.reg-form{
+    display: block;
+}
+.reg-form, .login-form{
+    width: 50%;
+}
+
+@media screen and (max-width: 620px) { 
+    .reg-form, .login-form{
+        width: 60%;
+    }
+    }
+    @media screen and (max-width: 530px) { 
+    .reg-form, .login-form{
+        width: 80%;
+        margin-top: 20px;
+    }
+    }
+    @media screen and (max-width: 320px) { 
+    .reg-form, .login-form{
+        width: 90%;
+    }
+    }

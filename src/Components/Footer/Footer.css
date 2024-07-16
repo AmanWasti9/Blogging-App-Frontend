@@ -1,0 +1,22 @@
+
+
+.footer-container {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+
+  
+  .footer-link {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 20px;
+    text-align: center;
+  }
+  

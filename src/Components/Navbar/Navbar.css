@@ -1,0 +1,123 @@
+/* Navbar.CSS */
+.main-nav {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+
+.nav-brands{
+        font-size: 6vmin;
+        text-transform: uppercase;
+        letter-spacing: .4em;
+}
+.logout_bt {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.lists {
+    gap: 30px;
+}
+
+
+.lists p {
+    color: black;
+    position: relative;
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Added transition for color change */
+}
+
+.lists p:hover {
+    font-weight: bold;
+}
+
+.lists p::after {
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%;
+    transition: background-color 0.3s ease; /* Added transition for dot color change */
+}
+
+.lists p:hover::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%;
+    transition: background-color 0.3s ease; 
+}
+
+.menu_bt {
+    display: none;
+    font-size: 20px;
+}
+
+.Mobile-Nav {
+    display: none;
+}
+
+
+.main-nav p {
+    color: black;
+    transition: font-weight 0.3s ease-in-out;
+}
+
+
+.menu_bt{
+    display: none;
+}
+
+.active {
+    font-weight: bold; /* or any other style you want to apply */
+  }
+
+@media screen and (max-width: 525px) {
+    .lists {
+        display: none;
+    }
+
+    .menu_bt {
+        display: block;
+    }
+
+    .logout_bt {
+        display: none;
+    }
+
+    .Mobile-Nav {
+        display: block;
+    }
+    .menu_bt{
+        display: block;
+    }
+    .pt-180px{
+        padding-top: 100px;
+    }
+}
+
+
+@media screen and (min-width: 2100px) {
+    .pt-180px{
+        padding-top: 200px;
+    }
+}
+
+
+
+  

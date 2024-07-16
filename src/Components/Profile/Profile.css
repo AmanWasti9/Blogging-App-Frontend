@@ -1,0 +1,44 @@
+.pro-img {
+    width: 200px;
+    height: 200px;
+}
+/* .amm{
+    display: flex;
+    flex-direction: row;
+} */
+
+/* media query for screens smaller than 768 pixels */
+@media screen and (max-width: 768px) {
+    .pro-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* media query for screens smaller than 525 pixels */
+@media screen and (max-width: 525px) {
+    .pro-img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* media query for screens smaller than 525 pixels */
+@media screen and (max-width: 370px) {
+   .avatar{
+    display: none;
+    
+
+   }
+
+}
+
+
+/* media query for screens smaller than 349 pixels */
+@media screen and (max-width: 349px) {
+    .pro-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
