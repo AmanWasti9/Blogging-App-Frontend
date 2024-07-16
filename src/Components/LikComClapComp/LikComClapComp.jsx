@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { CiHeart } from "react-icons/ci";
 import { MdBookmarkAdd } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
-import { useSpeechSynthesis } from "react-speech-kit";
+// import { useSpeechSynthesis } from "react-speech-kit";
 import { CiBookmarkPlus } from "react-icons/ci";
-import b1 from "../../Images/boy1.jpg";
-import b2 from "../../Images/boy2.png";
-import g from "../../Images/girl.jpg";
+// import b1 from "../../Images/boy1.jpg";
+// import b2 from "../../Images/boy2.png";
+// import g from "../../Images/girl.jpg";
 import { FaHeart } from "react-icons/fa";
 import {
   createLike,
@@ -23,12 +23,12 @@ import {
   loadSaveByUser,
 } from "../../Services/SaveService";
 
-export default function LikComClapComp({ content }) {
+export default function LikComClapComp() {
   const { postId } = useParams();
   const navigate = useNavigate();
 
-  const { speak, speaking, cancel, voices } = useSpeechSynthesis();
-  const [isSpeaking, setIsSpeaking] = useState(false);
+  // const { speak, speaking, cancel, voices } = useSpeechSynthesis();
+  // const [isSpeaking, setIsSpeaking] = useState(false);
   const [isLiked, setIsLiked] = useState(undefined);
   const [isSaved, setIsSaved] = useState(undefined);
   const [totalLikes, setTotalLikes] = useState();
@@ -97,29 +97,29 @@ export default function LikComClapComp({ content }) {
     fetchTotalLike();
   }, [postId]);
 
-  useEffect(() => {
-    // Update isSpeaking state based on speech synthesis state
-    setIsSpeaking(speaking);
-  }, [speaking]);
+  // useEffect(() => {
+  //   // Update isSpeaking state based on speech synthesis state
+  //   setIsSpeaking(speaking);
+  // }, [speaking]);
 
-  const handleClick = (voiceIndex) => {
-    if (!isLoggedIn()) {
-      navigate("/register-and-login");
-      return;
-    }
+  // const handleClick = (voiceIndex) => {
+  //   if (!isLoggedIn()) {
+  //     navigate("/register-and-login");
+  //     return;
+  //   }
 
-    if (speaking) {
-      // If speech synthesis is ongoing
-      if (isSpeaking) {
-        cancel(); // Pause speech
-      } else {
-        speak({ text: content, rate: 0.4, voice: voices[voiceIndex] }); // Resume speech
-      }
-    } else {
-      // If speech synthesis is not ongoing, start speaking
-      speak({ text: content, rate: 0.4, voice: voices[voiceIndex] });
-    }
-  };
+  //   if (speaking) {
+  //     // If speech synthesis is ongoing
+  //     if (isSpeaking) {
+  //       cancel(); // Pause speech
+  //     } else {
+  //       speak({ text: content, rate: 0.4, voice: voices[voiceIndex] }); // Resume speech
+  //     }
+  //   } else {
+  //     // If speech synthesis is not ongoing, start speaking
+  //     speak({ text: content, rate: 0.4, voice: voices[voiceIndex] });
+  //   }
+  // };
 
   // Handle Like
   const handleLike = async () => {
@@ -229,7 +229,7 @@ export default function LikComClapComp({ content }) {
             )}
           </div>
         </div>
-        <div className="mydiv2 flex-row g-1_2w">
+        {/* <div className="mydiv2 flex-row g-1_2w">
           <div onClick={() => handleClick(0)}>
             <img
               src={b1}
@@ -251,7 +251,7 @@ export default function LikComClapComp({ content }) {
               className="h-3vw w-3vw obj-cov br-50per cur-p"
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <hr />
     </div>

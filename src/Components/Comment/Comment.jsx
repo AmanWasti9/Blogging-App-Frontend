@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { getCurrentUserDetail, isLoggedIn } from "../../Auth/Auth";
 import { Container } from "@mui/material";
 import { IoSend } from "react-icons/io5";
-import TextField from "@mui/material/TextField";
+import { BASE_URL } from "../../Services/Helper";
 
 export default function CommentSection() {
   const { postId } = useParams();
@@ -174,7 +174,15 @@ export default function CommentSection() {
                     ? comments.map((commentItem) => (
                         <div className="flex-row" key={commentItem.id}>
                           <div className="cpic">
-                            <p className="fs-12">Image</p>
+                            <img
+                              src={
+                                commentItem.user.imgName
+                                  ? `${BASE_URL}/api/users/image/${commentItem.user.imgName}`
+                                  : `https://icon-library.com/images/default-user-icon/default-user-icon-3.jpg`
+                              }
+                              alt=""
+                              className="h-3vw w-3vw obj-cov br-50per"
+                            />
                           </div>
                           <div className="c_namcom flex-col">
                             <div className="cname">
@@ -191,7 +199,15 @@ export default function CommentSection() {
                     : comments.slice(0, 5).map((commentItem) => (
                         <div className="flex-row" key={commentItem.id}>
                           <div className="cpic">
-                            <p className="fs-12">Image</p>
+                            <img
+                              src={
+                                commentItem.user.imgName
+                                  ? `${BASE_URL}/api/users/image/${commentItem.user.imgName}`
+                                  : `https://icon-library.com/images/default-user-icon/default-user-icon-3.jpg`
+                              }
+                              alt=""
+                              className="h-3vw w-3vw obj-cov br-50per"
+                            />
                           </div>
                           <div className="c_namcom flex-col">
                             <div className="cname">

@@ -91,7 +91,7 @@ export default function ViewBlog() {
                   </span>
                 </div>
               </div>
-              <LikComClapComp content={post.content} />
+              <LikComClapComp />
               <div
                 className="img"
                 style={{
