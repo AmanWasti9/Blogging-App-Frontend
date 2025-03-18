@@ -81,21 +81,33 @@ export default function Navbar() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            marginTop: "10px",
-            padding: "5px 20px",
+            padding: "1px 20px",
           }}
         >
-          <div>
+          <Link to="/" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
             <img
               src={Logo}
-              alt=""
+              alt="Beacon Logo"
               style={{
-                width: "70px",
+                width: "100px",
+                height: "100px",
+                objectFit: "contain",
+                filter: "drop-shadow(0 2px 5px rgba(0,0,0,0.1))",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = "scale(1.05) rotate(5deg)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = "scale(1) rotate(0)";
               }}
             />
-          </div>
-          <div>
-            <h2 className="text-center nav-brands">Beacon</h2>
+          </Link>
+
+          <div style={{
+            marginTop:"10px"
+          }}>
+            <h2 className="nav-brands">Beacon</h2>
           </div>
 
           <div

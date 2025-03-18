@@ -1,10 +1,23 @@
 .stroke-text {
-    font-size: 14vmin; 
-    color: transparent; 
-    -webkit-text-stroke: 2px white; 
+    font-size: clamp(3rem, 10vmin, 7rem);
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
-.para {
-    font-size: 4vmin; 
-    font-weight: 600;
+
+@media (max-width: 768px) {
+    .stroke-text {
+        -webkit-text-stroke: 1.5px white;
+    }
+}
+
+@media (max-width: 480px) {
+    .stroke-text {
+        -webkit-text-stroke: 1px white;
+    }
 }
 

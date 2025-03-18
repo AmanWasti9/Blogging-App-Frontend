@@ -38,9 +38,21 @@ export default function Searchbar({ handleSearchResults, loadAllBlogs }) {
       <div
         className="flex-row"
         style={{
-          border: "2px solid black",
+          border: "1px solid rgba(0,0,0,0.1)",
           width: "500px",
           borderRadius: "30px",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
+          transition: "all 0.3s ease",
+          background: "white",
+          overflow: "hidden"
+        }}
+        onMouseOver={(e) => {
+          e.currentTarget.style.boxShadow = "0 6px 20px rgba(232, 90, 79, 0.1)";
+          e.currentTarget.style.borderColor = "rgba(232, 90, 79, 0.3)";
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.boxShadow = "0 4px 15px rgba(0,0,0,0.05)";
+          e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)";
         }}
       >
         <div
@@ -51,7 +63,8 @@ export default function Searchbar({ handleSearchResults, loadAllBlogs }) {
             justifyContent: "center",
             alignItems: "center",
             fontSize: "20px",
-            borderRight: "1px solid black",
+            color: "var(--primary-color)",
+            padding: "0 5px"
           }}
         >
           <CiSearch />
@@ -64,9 +77,11 @@ export default function Searchbar({ handleSearchResults, loadAllBlogs }) {
             placeholder="Search all topics"
             style={{
               width: "95%",
-              padding: "10px",
+              padding: "12px 10px",
               border: "none",
               outline: "none",
+              fontSize: "14px",
+              fontFamily: "'Poppins', sans-serif"
             }}
             value={searchValue}
             onChange={handleSearchChange}

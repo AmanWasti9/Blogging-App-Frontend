@@ -11,8 +11,8 @@ export async function showConfirmationDialog(
     text: text,
     icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
+    confirmButtonColor: "var(--primary-color)",
+    cancelButtonColor: "var(--secondary-color)",
     confirmButtonText: confirmButtonText,
     cancelButtonText: cancelButtonText,
   });

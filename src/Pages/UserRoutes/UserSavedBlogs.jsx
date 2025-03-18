@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Container } from "@mui/material";
 import { loadSaveByUser } from "../../Services/SaveService";
 import { loadPost } from "../../Services/PostService";
@@ -47,6 +47,20 @@ export default function UserSavedBlogs() {
   return (
     <div>
       <Container>
+        <Typography
+          variant="h4"
+          component="h1"
+          align="center"
+          sx={{
+            mb: 4,
+            color: "#F05454",
+            fontWeight: 500,
+            pt: 3,
+            fontFamily: "'Playfair Display', serif",
+          }}
+        >
+          Your Saved Blogs
+        </Typography>
         <center>
           <Helmet>
             <meta charSet="utf-8" />

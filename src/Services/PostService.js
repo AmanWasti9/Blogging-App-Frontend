@@ -49,9 +49,11 @@ export const loadAllActivePosts = async () => {
   }
 };
 
-
 // Load All Active Post With Pagination
-export const loadAllActivePostsWithPagination = async (pageNumber, pageSize) => {
+export const loadAllActivePostsWithPagination = async (
+  pageNumber,
+  pageSize
+) => {
   try {
     const response = await myAxios.get(
       `/api/paginated-active-posts?pageNumber=${pageNumber}&pageSize=${pageSize}&sortBy=addedDate&sortDir=desc`
@@ -171,5 +173,39 @@ export const loadPostsBySearch = async (keywords) => {
   } catch (error) {
     console.error("Error while searching posts:", error);
     throw error;
+  }
+};
+
+// Generate keywords
+export const generateKeywords = async (title) => {
+  try {
+    const response = await privateAxios.post("/api/generate-keywords", null, {
+      params: { title },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error while generating keywords:", error);
+  }
+};
+
+// Check plagiarism
+export const checkPlagiarism = async (content) => {
+  try {
+    const response = await privateAxios.post(`/api/check`, content);
+    return response.data;
+  } catch (error) {
+    console.error("Error while checking plagiarism:", error);
+  }
+};
+
+// Chatbot
+export const chatBot = async (userId, message) => {
+  try {
+    const response = await privateAxios.post("/api/chat/ask", null, {
+      params: { userId, message },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error while in chatBot:", error);
   }
 };

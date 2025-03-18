@@ -47,22 +47,23 @@ const Wrapper = styled.section`
   align-items: center;
 
   .top-btn {
-    font-size: 3rem;
-    width: 4rem;
-    height: 4rem;
-    color: black;
-    background-color: transparent;
-    border: 4px solid black;
-    box-shadow: red;
+    font-size: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: #333;
+    background-color: white;
+    border: 2px solid rgba(0,0,0,0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     border-radius: 50%;
     position: fixed;
-    bottom: 5rem;
+    bottom: 3rem;
     right: 3rem;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     &--icon {
       animation: gototop 1.2s linear infinite alternate-reverse;

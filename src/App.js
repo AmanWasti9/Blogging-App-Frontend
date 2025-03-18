@@ -19,7 +19,8 @@ import AllCategoriesPage from "./Pages/PublicRoutes/AllCategoriesPage";
 import HomePage from "./Pages/PublicRoutes/HomePage";
 import SingleCategoryBlog from "./Pages/PublicRoutes/SingleCategoryBlog";
 import Navbar from "./Components/Navbar/Navbar";
-import GoToTop from "./Components/GoToTop/GoToTop";
+// import GoToTop from "./Components/GoToTop/GoToTop";
+import ChatBot from "./Components/ChatBot/ChatBot";
 // import MobileRegister from "./Pages/PublicRoutes/RegisterAndLogin/MobileRegister";
 import ResponsiveForm from "./Pages/PublicRoutes/RegisterAndLogin/ResponsiveForm";
 import OurStoryPage from "./Pages/PublicRoutes/OurStoryPage";
@@ -64,7 +65,8 @@ function App() {
 
         <br />
         <br />
-        <GoToTop />
+        {/* <GoToTop /> */}
+        <ChatBot />
         <Footer />
       </BrowserRouter>
     </UserProvider>

@@ -1,13 +1,61 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fcfcfc;
+  color: #333;
+  line-height: 1.6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --primary-color: #e85a4f;
+  --primary-dark: #d8412f;
+  --primary-light: #f07a70;
+  --secondary-color: #5d576b;
+  --secondary-dark: #433d4a;
+  --secondary-light: #8a8294;
+  --accent-color: #8e8d8a;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --background-light: #fcfcfc;
+  --background-dark: #eae7dc;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --transition-standard: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-standard);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+button, .button {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-standard);
+  box-shadow: 0 4px 15px rgba(232, 90, 79, 0.2);
+}
+
+button:hover, .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 90, 79, 0.3);
 }

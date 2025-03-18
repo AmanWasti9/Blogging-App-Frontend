@@ -6,6 +6,7 @@ import { getAllActivePostsWithLikes } from "../../Services/PostService";
 import { Link } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 import { BASE_URL } from "../../Services/Helper";
+import { motion } from "motion/react";
 
 export default function TrendingSection() {
   const [allPosts, setAllPosts] = useState(null); // Initialize as null
@@ -53,37 +54,91 @@ export default function TrendingSection() {
     <div>
       <br />
       <Container>
-        <div className="flex-row mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex-row mb-8" 
+          style={{ 
+            alignItems: "center", 
+            gap: "20px", 
+            marginBottom: "3rem",
+            borderBottom: "1px solid rgba(0,0,0,0.08)",
+            paddingBottom: "24px",
+            position: "relative"
+          }}>
           <div>
-            <span className="circular-icon">
-              <FaArrowTrendUp />
-            </span>
+            <motion.span 
+              whileHover={{ rotate: 0, scale: 1.1 }}
+              style={{ 
+                display: "flex", 
+                alignItems: "center", 
+                justifyContent: "center", 
+                width: "54px", 
+                height: "54px", 
+                borderRadius: "50%", 
+                background: "linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)", 
+                color: "white",
+                boxShadow: "0 8px 25px rgba(232, 90, 79, 0.3)",
+                transform: "rotate(-10deg)",
+                transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+              }}>
+              <FaArrowTrendUp style={{ fontSize: "1.5rem" }} />
+            </motion.span>
           </div>
           <div>
-            <h4>Trending on Beacon</h4>
+            <h4 className="heading-md" style={{ 
+              margin: 0, 
+              fontWeight: "700", 
+              background: "linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)", 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent",
+              fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+              letterSpacing: "0.02em",
+              position: "relative",
+              fontFamily: "'Playfair Display', serif"
+            }}>Trending on Beacon</h4>
+            <div style={{
+              height: "3px",
+              width: "40%",
+              background: "linear-gradient(90deg, rgba(232, 90, 79, 0.7) 0%, rgba(232, 90, 79, 0) 100%)",
+              marginTop: "10px",
+              borderRadius: "3px"
+            }}></div>
           </div>
-        </div>
+        </motion.div>
         <center>
           {allPosts === null ? (
-            <>
-              {[...Array(6)].map((_, index) => (
-                <ContentLoader
-                  speed={2}
-                  width={300}
-                  height={160}
-                  style={{
-                    margin: "0 10px",
-                  }}
-                >
-                  <rect x="0" y="0" rx="5" ry="5" width="50" height="50" />
-                  <rect x="60" y="10" rx="4" ry="4" width="190" height="30" />
-                  <rect x="0" y="60" rx="3" ry="3" width="250" height="20" />
-                  <rect x="0" y="90" rx="3" ry="3" width="250" height="20" />
-                  <rect x="0" y="120" rx="2" ry="2" width="100" height="10" />
-                  <rect x="120" y="120" rx="2" ry="2" width="100" height="10" />
-                </ContentLoader>
-              ))}
-            </>
+            <div className="TrendSec__div1">
+              <div className="TrendSec__div2">
+                {[...Array(6)].map((_, index) => (
+                  <div className="TrendSec__subdiv" key={index}>
+                    <ContentLoader
+                      speed={2}
+                      width={300}
+                      height={160}
+                      backgroundColor="#f3f3f3"
+                      foregroundColor="#ecebeb"
+                      style={{
+                        margin: "0",
+                        padding: "16px",
+                        borderRadius: "8px",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                        width: "100%"
+                      }}
+                    >
+                      <circle cx="20" cy="20" r="20" /> 
+                      <rect x="50" y="15" rx="4" ry="4" width="100" height="12" />
+                      <rect x="15" y="50" rx="3" ry="3" width="250" height="15" />
+                      <rect x="15" y="75" rx="3" ry="3" width="230" height="15" />
+                      <rect x="15" y="120" rx="2" ry="2" width="80" height="10" />
+                      <rect x="105" y="120" rx="2" ry="2" width="80" height="10" />
+                      <rect x="0" y="0" rx="8" ry="8" width="40" height="160" opacity="0.1" />
+                    </ContentLoader>
+                  </div>
+                ))}
+              </div>
+            </div>
           ) : (
             <>
               <div className="TrendSec__div1">
@@ -107,25 +162,31 @@ export default function TrendingSection() {
                                           : "https://icon-library.com/images/default-user-icon/default-user-icon-3.jpg"
                                       }
                                       alt=""
-                                      className="icon-img"
+                                      className="icon-img br-50per"
+                                      style={{ border: "2px solid rgba(0,0,0,0.05)" }}
                                     />
                                   </span>
                                 </div>
                                 <div>
-                                  <span>{post.user.name}</span>
+                                  <span style={{ fontWeight: "600", fontSize: "14px" }}>{post.user.name}</span>
                                 </div>
                               </div>
                               <div className="mb-8">
-                                <h5 className="ellipise fs-15 fw-700">
+                                <h5 className="ellipise fs-15 fw-700" style={{ 
+                                  marginBottom: "8px", 
+                                  lineHeight: "1.4",
+                                  letterSpacing: "0.01em",
+                                  color: "#222"
+                                }}>
                                   {post.title}
                                 </h5>
                               </div>
-                              <div className="flex-row datenTime">
-                                <span className="readTime">
+                              <div className="flex-row datenTime" style={{ opacity: "0.7" }}>
+                                <span className="readTime" style={{ fontSize: "13px" }}>
                                   {printDate(post.addedDate)}
                                 </span>
-                                <span className="readTime lh-15px">.</span>
-                                <span className="readTime">
+                                <span className="readTime lh-15px" style={{ margin: "0 6px" }}>•</span>
+                                <span className="readTime" style={{ fontSize: "13px" }}>
                                   {calculateReadTime(post.content)} min read
                                 </span>
                               </div>

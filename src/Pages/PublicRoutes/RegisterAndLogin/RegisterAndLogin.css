@@ -5,8 +5,9 @@
     align-items: center;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
-    margin: -20px 0;
-    margin-top: 50px;
+    margin: 0;
+    margin-top: 100px; /* Increased top margin to prevent overlap with fixed navbar */
+    padding-top: 20px; /* Added padding for extra spacing */
 }
 
 .login-form{
