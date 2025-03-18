@@ -50,5 +50,10 @@ The frontend communicates with the backend API to perform various operations. Th
 - LikeService: Manages likes on posts.
 - SavedService: Handles saved posts functionality.
 
+## Demo vedio
+https://drive.google.com/file/d/1pIxlfLMCuK9icPKI5YDMFctlUBN3n2M8/view
+
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request to contribute to the project.
+
+
